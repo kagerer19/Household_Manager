@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PMTest {
     @Test
-    void InvalidNameException() {}
+    void InvalidNameException() {
+
+    }
 
     @Test
     void testCreateUser() {}
@@ -12,8 +14,10 @@ public class PMTest {
     @Test
     void testCreateAddress() {}
 
-    void NullpointerException() {}
+    @Test
+    void NullPointerException() {}
 
+    @Test
     void testFindUserByName() {}
 }
 

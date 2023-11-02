@@ -1,17 +1,15 @@
-package org.example;
+package org.example.PV;
 
-class Address extends User {
+class Address {
     private String streetName;
     private String city;
     private String postCode;
     private int houseNum;
 
-    Address(){
-        super();
-    }
     //Constructors
     Address(String street, String town, String postalCode, int houseNumber) {
         this.streetName = street;
+        this.city = town;
         this.postCode = postalCode;
         this.houseNum = houseNumber;
     }
