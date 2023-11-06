@@ -6,6 +6,27 @@ import java.util.List;
 
 class PV {
     List<User> users = new ArrayList<>();
+
+    public User getUserById(int ID) {
+        for (User user : users) {
+            if (user.getID() == ID) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserByName(String name) {
+        for (User user : users) {
+            if (user.getFirstName().equalsIgnoreCase(name) || user.getLastName().equalsIgnoreCase(name)) {
+                return user;
+            } else {
+                System.out.println("No user with the information provided: ");
+            }
+        }
+        throw new NullPointerException("User with the given name not found: " + name);
+    }
+
     public void removeUser(int ID) {
         //iterate the list for ID and then remove
         Iterator<User> userToDelete = users.iterator();
@@ -37,8 +58,12 @@ class PV {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        for (User u : users) {
-            sb.append(u.toString()).append("\n");
+        if (users.isEmpty()) {
+            sb.append("is empty");
+        } else {
+            for (User u : users) {
+                sb.append(u.toString()).append("\n");
+            }
         }
         return sb.toString();
     }

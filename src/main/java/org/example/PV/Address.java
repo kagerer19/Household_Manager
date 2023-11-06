@@ -4,10 +4,10 @@ class Address {
     private String streetName;
     private String city;
     private String postCode;
-    private int houseNum;
+    private String houseNum;
 
     //Constructors
-    Address(String street, String town, String postalCode, int houseNumber) {
+    Address(String street, String town, String postalCode, String houseNumber) {
         this.streetName = street;
         this.city = town;
         this.postCode = postalCode;
@@ -27,7 +27,7 @@ class Address {
         return postCode;
     }
 
-    public int getHouseNum() {
+    public String getHouseNum() {
         return houseNum;
     }
 }
