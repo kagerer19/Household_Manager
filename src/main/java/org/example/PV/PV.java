@@ -16,12 +16,10 @@ class PV {
         return null;
     }
 
-    public User getUserByName(String name) {
+    public User getUserByName(String name) throws NullPointerException {
         for (User user : users) {
             if (user.getFirstName().equalsIgnoreCase(name) || user.getLastName().equalsIgnoreCase(name)) {
                 return user;
-            } else {
-                System.out.println("No user with the information provided: ");
             }
         }
         throw new NullPointerException("User with the given name not found: " + name);

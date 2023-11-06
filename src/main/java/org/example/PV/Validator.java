@@ -1,10 +1,8 @@
 package org.example.PV;
 
-import static org.example.PV.Main.*;
-
 public class Validator {
     public static final String NAME_REGEX = "^[A-Za-z\\s]+$";
-    public static final String DOB_REGEX = "^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$";
+    public static final String DOB_REGEX = "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$";
     public static final String NUM_REGEX = "^\\d+$";
 
     public void validateInput(String firstName, String lastName) throws InvalidPersonDetailsException {

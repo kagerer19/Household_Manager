@@ -2,6 +2,7 @@ package org.example.PV;
 
 import java.util.Random;
 import java.util.Scanner;
+
 import static org.example.PV.Validator.NUM_REGEX;
 
 public class Main {
@@ -41,7 +42,6 @@ public class Main {
 
             switch (userOption) {
                 case 1 -> {
-
                     String firstName, lastName;
                     Validator validation = new Validator();
 
@@ -169,7 +169,6 @@ public class Main {
                             pvCodersBay.getUserByName(userToFind);
                             System.out.println(pvCodersBay.getUserByName(userToFind));
                         } catch (NullPointerException e) {
-                            System.out.println("User not found: " + e.getMessage());
                             e.printStackTrace();
                         }
 
@@ -178,7 +177,6 @@ public class Main {
                             pvLinz.getUserByName(userToFind);
                             System.out.println(pvLinz.getUserByName(userToFind));
                         } catch (NullPointerException e) {
-                            System.out.println("User not found: " + e.getMessage());
                             e.printStackTrace();
                         }
 
@@ -187,7 +185,6 @@ public class Main {
                             pvVienna.getUserByName(userToFind);
                             System.out.println(pvVienna.getUserByName(userToFind));
                         } catch (NullPointerException e) {
-                            System.out.println("User not found: " + e.getMessage());
                             e.printStackTrace();
                         }
                     }
