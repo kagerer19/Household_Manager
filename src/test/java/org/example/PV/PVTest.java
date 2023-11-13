@@ -13,6 +13,5 @@ class PVTest {
         assertThrows(NullPointerException.class, () -> {
             pvCodersBay.getUserByName("Bob");
         });
-
     }
 }
