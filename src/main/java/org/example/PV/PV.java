@@ -5,21 +5,21 @@ import java.util.Iterator;
 import java.util.List;
 
 class PV {
-    List<User> users = new ArrayList<>();
+    List<Person> people = new ArrayList<>();
 
-    public User getUserById(int ID) {
-        for (User user : users) {
-            if (user.getID() == ID) {
-                return user;
+    public Person getUserById(int ID) {
+        for (Person person : people) {
+            if (person.getID() == ID) {
+                return person;
             }
         }
         return null;
     }
 
-    public User getUserByName(String name) throws NullPointerException {
-        for (User user : users) {
-            if (user.getFirstName().equalsIgnoreCase(name) || user.getLastName().equalsIgnoreCase(name)) {
-                return user;
+    public Person getUserByName(String name) throws NullPointerException {
+        for (Person person : people) {
+            if (person.getFirstName().equalsIgnoreCase(name) || person.getLastName().equalsIgnoreCase(name)) {
+                return person;
             }
         }
         throw new NullPointerException("User with the given name not found: " + name);
@@ -27,7 +27,7 @@ class PV {
 
     public void removeUser(int ID) {
         //iterate the list for ID and then remove
-        Iterator<User> userToDelete = users.iterator();
+        Iterator<Person> userToDelete = people.iterator();
         int removeByID;
 
         while (userToDelete.hasNext()) {
@@ -39,27 +39,27 @@ class PV {
     }
 
     public void createNewUser(int ID, String name, String surname) {
-        User newUser = new User(ID, name, surname);
-        users.add(newUser);
+        Person newPerson = new Person(ID, name, surname);
+        people.add(newPerson);
     }
 
-    public void createNewUser(int ID, String name, String surname, String birthday, User.Gender gender) {
-        User newUser = new User(ID, name, surname, birthday, gender);
-        users.add(newUser);
+    public void createNewUser(int ID, String name, String surname, String birthday, Person.Gender gender) {
+        Person newPerson = new Person(ID, name, surname, birthday, gender);
+        people.add(newPerson);
     }
 
-    public void createNewUser(int ID, String name, String surname, String birthday, User.Gender gender, Address address) {
-        User newUser = new User(ID, name, surname, birthday, gender, address);
-        users.add(newUser);
+    public void createNewUser(int ID, String name, String surname, String birthday, Person.Gender gender, Household household) {
+        Person newPerson = new Person(ID, name, surname, birthday, gender, household);
+        people.add(newPerson);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        if (users.isEmpty()) {
+        if (people.isEmpty()) {
             sb.append("is empty");
         } else {
-            for (User u : users) {
+            for (Person u : people) {
                 sb.append(u.toString()).append("\n");
             }
         }

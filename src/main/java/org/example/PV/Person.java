@@ -1,7 +1,7 @@
 package org.example.PV;
 
-class User {
-    public User() {
+class Person {
+    public Person() {
     }
 
     enum Gender {
@@ -13,16 +13,16 @@ class User {
     private String lastName;
     private String DOB;
     private Gender gender;
-    private Address address;
+    private Household household;
 
     //Constructors
-    User(int ID, String name, String surname) {
+    Person(int ID, String name, String surname) {
         this.userID = ID;
         this.firstName = name;
         this.lastName = surname;
     }
 
-    User(int ID, String name, String surname, String birthday, Gender gender) {
+    Person(int ID, String name, String surname, String birthday, Gender gender) {
         this.userID = ID;
         this.firstName = name;
         this.lastName = surname;
@@ -30,13 +30,13 @@ class User {
         this.gender = gender;
     }
 
-    User(int ID, String name, String surname, String birthday, Gender gender, Address address1) {
+    Person(int ID, String name, String surname, String birthday, Gender gender, Household household1) {
         this.userID = ID;
         this.firstName = name;
         this.lastName = surname;
         this.DOB = birthday;
         this.gender = gender;
-        setAddress(address1);
+        setAddress(household1);
     }
 
     //Getters
@@ -60,8 +60,8 @@ class User {
         return gender;
     }
 
-    public void setAddress(Address address1) {
-        this.address = address1;
+    public void setAddress(Household household1) {
+        this.household = household1;
     }
 
     @Override
@@ -74,13 +74,13 @@ class User {
         result.append("DOB: ").append(getDOB()).append("\n");
         result.append("Gender: ").append(getGender()).append("\n");
 
-        if (address != null) {
+        if (household != null) {
             result.append("\n-Address-\n");
             result.append("User-ID: ").append(getID()).append("\n");
-            result.append("Street: ").append(address.getStreetName()).append("\n");
-            result.append("City: ").append(address.getCity()).append("\n");
-            result.append("Post Code: ").append(address.getPostCode()).append("\n");
-            result.append("House Number: ").append(address.getHouseNum()).append("\n");
+            result.append("Street: ").append(household.getStreetName()).append("\n");
+            result.append("City: ").append(household.getCity()).append("\n");
+            result.append("Post Code: ").append(household.getPostCode()).append("\n");
+            result.append("House Number: ").append(household.getHouseNum()).append("\n");
         } else {
             result.append("\nNo Address Information\n");
         }

@@ -84,7 +84,7 @@ public class Main {
 
                         System.out.println("Enter gender (MALE or FEMALE): ");
                         String genderStr = sc.next();
-                        User.Gender gender = User.Gender.valueOf(genderStr.toUpperCase());
+                        Person.Gender gender = Person.Gender.valueOf(genderStr.toUpperCase());
 
                         validation.validateInput(firstName, lastName, dob);
 
@@ -104,8 +104,8 @@ public class Main {
                 case 3 -> {
                     String firstName, lastName, dob, genderStr;
                     String houseNumber;
-                    User.Gender genderWithAddress;
-                    Address address;
+                    Person.Gender genderWithAddress;
+                    Household household;
                     Validator validation = new Validator();
 
                     try {
@@ -117,7 +117,7 @@ public class Main {
                         dob = sc.next();
                         System.out.println("Enter gender (MALE or FEMALE): ");
                         genderStr = sc.next();
-                        genderWithAddress = User.Gender.valueOf(genderStr.toUpperCase());
+                        genderWithAddress = Person.Gender.valueOf(genderStr.toUpperCase());
                         System.out.println("Enter street address: ");
                         String street = sc.next();
 
@@ -130,22 +130,20 @@ public class Main {
                         String zipCode = sc.nextLine();
                         System.out.println("Enter house number: ");
                         houseNumber = sc.next();
-                        address = new Address(street, city, zipCode, houseNumber);
+                        household = new Household(street, city, zipCode, houseNumber);
 
                         validation.validateInput(firstName, lastName, dob, city, zipCode, String.valueOf(houseNumber));
 
                         if (managementOffice == 1) {
-                            pvCodersBay.createNewUser(rand.nextInt(1000, 5000), firstName, lastName, dob, genderWithAddress, address); // ID is not specified
+                            pvCodersBay.createNewUser(rand.nextInt(1000, 5000), firstName, lastName, dob, genderWithAddress, household); // ID is not specified
                         } else if (managementOffice == 2) {
-                            pvLinz.createNewUser(rand.nextInt(1000, 5000), firstName, lastName, dob, genderWithAddress, address);
+                            pvLinz.createNewUser(rand.nextInt(1000, 5000), firstName, lastName, dob, genderWithAddress, household);
                         } else {
-                            pvVienna.createNewUser(rand.nextInt(1000, 5000), firstName, lastName, dob, genderWithAddress, address);
+                            pvVienna.createNewUser(rand.nextInt(1000, 5000), firstName, lastName, dob, genderWithAddress, household);
                         }
                     } catch (InvalidPersonDetailsException e) {
                         e.printStackTrace();
                     }
-
-
                 }
 
                 case 4 -> {

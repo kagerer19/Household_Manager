@@ -1,13 +1,13 @@
 package org.example.PV;
 
-class Address {
+class Household {
     private String streetName;
     private String city;
     private String postCode;
     private String houseNum;
 
     //Constructors
-    Address(String street, String town, String postalCode, String houseNumber) {
+    Household(String street, String town, String postalCode, String houseNumber) {
         this.streetName = street;
         this.city = town;
         this.postCode = postalCode;
